@@ -6,6 +6,7 @@ app = dash.Dash(__name__)
 colors = {
     'color': 'blue',
     'fontSize': 12,
+    'fontStyle':14
 
 }
 app.layout = html.Div(
