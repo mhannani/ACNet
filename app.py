@@ -9,7 +9,7 @@ colors = {
 }
 app.layout = html.Div(
     children=[
-        html.H2('This our project !'),
+        html.H2('This is our project !'),
 
     ], )
 
