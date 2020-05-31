@@ -8,7 +8,8 @@ colors = {
     'fontSize': 12,
     'fontStyle': 14,
     'fontWeight': 'bold',
-    'margin': 50
+    'margin': 50,
+    'padding':10,
 }
 app.layout = html.Div(
     children=[
