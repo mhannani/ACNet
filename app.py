@@ -4,7 +4,8 @@ import dash_html_components as html
 
 app = dash.Dash(__name__)
 colors = {
-    'background-color': 'red',
+    'color': 'blue',
+    'fontSize': 12,
 
 }
 app.layout = html.Div(
