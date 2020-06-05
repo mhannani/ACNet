@@ -9,6 +9,7 @@ external_scripts = ['https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstra
                     'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js',
                     ]
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.SKETCHY], external_scripts=external_scripts)
+server = app.server
 app.layout = html.Div([
 #---------------------------------------------------Navbar--------------------------------------------------------------
     html.Nav([
