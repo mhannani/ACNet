@@ -1,9 +1,12 @@
+#
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output
 
+# ---------------------------------------------Importing files---------------------------------------------------------#
+from widgets.getting_the_data import *
 # external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 external_scripts = ['https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js',
                     'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js',
@@ -11,7 +14,7 @@ external_scripts = ['https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstra
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.SKETCHY], external_scripts=external_scripts)
 server = app.server
 app.layout = html.Div([
-#---------------------------------------------------Navbar--------------------------------------------------------------
+#---------------------------------------------------Navbar-------------------------------------------------------------#
     html.Nav([
         html.A([
             'Logo'
@@ -55,7 +58,7 @@ app.layout = html.Div([
                     dbc.Tab(label='viewing the data', tab_id='viewing_the_data',className='nav-item'),
                     dbc.Tab(label='visualizing the data', tab_id='visualizing_the_data',className='nav-item'),
                 ], id='card_tabs', card=True, active_tab='getting_the_data',className='nav nav-pills nav-fill'),
-            ]),
+            ],style={'backgroundColor':'#efe081'}),
             dbc.CardBody([
                 # The content of each tab goes here !
             ],id='card_body')
@@ -64,7 +67,6 @@ app.layout = html.Div([
     ],className='ml-5 mr-5'),
 ],className='ml-4 mr-4')
 
-getting_the_data = 'getting_the_data'
 viewing_the_data = 'viewing_the_data'
 visualizing_the_data = 'visualizing_the_data'
 @app.callback(
@@ -74,7 +76,7 @@ visualizing_the_data = 'visualizing_the_data'
 )
 def show_tab_content(active_tab):
     if active_tab == 'getting_the_data':
-        return getting_the_data
+        return upload()
     elif active_tab == 'viewing_the_data':
         return viewing_the_data
     else:
